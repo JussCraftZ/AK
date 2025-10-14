@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JussCraftZ</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
 </head>
+
 <body>
   <header>
     <h1>JussCraftZ</h1>
@@ -17,7 +19,15 @@
   <img src="https://via.placeholder.com/400x300?text=Floral+Canvas" alt="Floral Canvas">
   <h3>Floral Canvas</h3>
   <p>$25.00</p>
-  
+
+  <!-- Shopping Cart Section -->
+<div id="cart">
+  <h2>Your Cart</h2>
+  <ul id="cart-items"></ul>
+  <p>Total: $<span id="cart-total">0.00</span></p>
+  <button onclick="checkout('Floral Canvas', 25.00)" class="buy-btn">Add to Cart</button>
+</div>
+
   <!-- PayPal Buy Button -->
   <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
     <input type="hidden" name="cmd" value="_xclick">
@@ -34,6 +44,13 @@
   <h3>Sunset Canvas</h3>
   <p>$30.00</p>
   
+<div id="cart">
+  <h2>Your Cart</h2>
+  <ul id="cart-items"></ul>
+  <p>Total: $<span id="cart-total">0.00</span></p>
+  <button onclick="checkout('Sunset Canvas',30.00)" class="buy-btn">Add to Cart</button>
+</div>
+
   <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
     <input type="hidden" name="cmd" value="_xclick">
     <input type="hidden" name="business" value="zayyash2706@gmail.com">
