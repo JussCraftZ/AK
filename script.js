@@ -1,57 +1,68 @@
-let cart = [];
+// ✅ Load Navbar & Footer dynamically on every page
+document.addEventListener("DOMContentLoaded", async () => {
+  // Load Navbar
+  try {
+    const navRes = await fetch("assets/components/navbar.html");
+    const navHTML = await navRes.text();
+    const navContainer = document.createElement("div");
+    navContainer.innerHTML = navHTML;
+    document.body.insertBefore(navContainer, document.body.firstChild);
+  } catch (err) {
+    console.error("Error loading Navbar:", err);
+  }
 
-function addToCart(product, price) {
-  cart.push({ product, price });
-  updateCart();
-}
+  // Load Footer
+  try {
+    const footRes = await fetch("assets/components/footer.html");
+    const footHTML = await footRes.text();
+    const footContainer = document.createElement("div");
+    footContainer.innerHTML = footHTML;
+    document.body.appendChild(footContainer);
+  } catch (err) {
+    console.error("Error loading Footer:", err);
+  }
 
-function updateCart() {
-  const cartItems = document.getElementById('cart-items');
-  const cartTotal = document.getElementById('cart-total');
+  // Wait a moment to ensure navbar/footer are loaded before initializing
+  setTimeout(initPageScripts, 300);
+});
 
-  cartItems.innerHTML = '';
-  let total = 0;
+function initPageScripts() {
+  // ✅ MOBILE MENU TOGGLE
+  const menuToggle = document.getElementById("menuToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
 
-  cart.forEach((item, index) => {
-    total += item.price;
-    const li = document.createElement('li');
-    li.textContent = `${item.product} - $${item.price.toFixed(2)}`;
-    cartItems.appendChild(li);
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("open");
+    });
+  }
+
+  // ✅ AUTO YEAR IN FOOTER
+  const yearSpan = document.getElementById("year");
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+
+  // ✅ CART COUNT (syncs with localStorage)
+  const cartCountEl = document.getElementById("cart-count");
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  if (cartCountEl) cartCountEl.textContent = cart.length;
+
+  // ✅ Close mobile menu when clicking a link
+  const mobileLinks = document.querySelectorAll("#mobileMenu a");
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("open");
+    });
   });
-
-  cartTotal.textContent = total.toFixed(2);
 }
 
-function checkout() {
-  // Create a PayPal checkout URL with cart data
-  let url = 'https://www.paypal.com/cgi-bin/webscr?cmd=_cart&upload=1&business=zayyash2706@gmail.com';
-
-  cart.forEach((item, index) => {
-    url += `&item_name_${index + 1}=${encodeURIComponent(item.product)}&amount_${index + 1}=${item.price.toFixed(2)}&quantity_${index + 1}=1`;
-  });
-
-  window.open(url, '_blank');
+// ✅ Function to update cart count when items are added
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartCountEl = document.getElementById("cart-count");
+  if (cartCountEl) cartCountEl.textContent = cart.length;
 }
 
-#cart {
-    border: 2px dashed var(--primary-color);
-    padding: 20px;
-    margin-top: 40px;
-    background-color: #fff;
-    max-width: 400px;
-  }
-  
-  #cart h2 {
-    color: var(--primary-color);
-  }
-  
-  #cart ul {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0;
-  }
-  
-  #cart li {
-    margin-bottom: 5px;
-  }
-  
+// Make updateCartCount available globally
+window.updateCartCount = updateCartCount;

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account | JussCraftZ</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="/src/register.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a href="index.html" class="logo">JussCraftZ</a>
+  </header>
+
+  <main class="auth-container">
+    <h2>Create Your Account</h2>
+
+<form id="registerForm" onsubmit="registerUser(event)">
+  <label>Email</label>
+  <input type="email" id="registerEmail" required placeholder="Enter your email" />
+
+  <label>Password</label>
+  <input type="password" id="registerPassword" required placeholder="Create a password" />
+
+      <div class="terms">
+        <input type="checkbox" id="agree" required />
+        <label for="agree">
+          I agree to the <a href="terms.html">Terms & Conditions</a> and <a href="privacy.html">Privacy Policy</a>
+        </label>
+      </div>
+
+      <button type="submit">Create Account</button>
+    </form>
+
+    <p>Already have an account? <a href="login.html">Login here</a></p>
+  </main>
+  <script type="module" src="assets/js/auth.js"></script>
+
+</body>
+</html>

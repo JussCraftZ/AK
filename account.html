@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Account | JussCraftZ</title>
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script type="module" src="assets/js/auth.js" defer></script>
+  <script type="module" src="assets/js/account.js" defer></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <div id="navbar-container"></div>
+
+  <main class="account-page">
+    <h1>My Account</h1>
+
+    <!-- Account Info -->
+    <section id="accountInfo">
+      <h2>Profile</h2>
+      <p><strong>Email:</strong> <span id="userEmail">Loading...</span></p>
+      <p><strong>Member Since:</strong> <span id="userCreated">Loading...</span></p>
+      <p><strong>Loyalty Points:</strong> <span id="loyaltyPoints">0</span></p>
+      <p><strong>Total Orders:</strong> <span id="totalOrders">0</span></p>
+    </section>
+
+    <!-- Account Actions -->
+    <section id="accountActions">
+      <button id="viewOrdersBtn" class="btn-primary">View Orders</button>
+      <button id="deleteAccountBtn" class="btn-danger">Delete Account</button>
+    </section>
+
+    <!-- Orders History -->
+    <section id="orderHistory" style="display:none;">
+      <h2>Order History</h2>
+      <div id="ordersContainer">Loading your orders...</div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <!-- Dynamic Navbar/Footer Loader -->
+  <script src="assets/js/loadNavbar.js" defer></script>
+  <script src="assets/js/loadFooter.js" defer></script>
+</body>
+</html>

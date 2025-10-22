@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details | JussCraftZ</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="assets/js/loadNavbar.js" defer></script>
+  <script src="assets/js/loadFooter.js" defer></script>
+  <script src="assets/js/product-details.js" type="module" defer></script>
+</head>
+<body>
+
+  <!-- ✅ Navbar -->
+  <div id="navbar"></div>
+
+  <!-- ✅ Product Details Section -->
+  <section class="product-details">
+    <div class="details-container">
+      <div class="image-container">
+        <img id="productImage" src="assets/images/coming-soon.png" alt="Product Image" />
+      </div>
+
+      <div class="info-container">
+        <h1 id="productName">Loading...</h1>
+        <p id="productDescription"></p>
+        <p id="productPrice" class="price"></p>
+        <p id="productSize"></p>
+        <p id="productTags"></p>
+
+        <div id="stockStatus"></div>
+
+        <!-- ✅ Quantity Selector -->
+        <label for="quantity">Quantity:</label>
+        <select id="quantity"></select>
+
+        <button id="addToCartBtn" class="btn-primary">Add to Cart</button>
+        <button id="notifyBtn" class="btn-secondary hidden">Notify Me</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ Reviews Section -->
+  <section class="reviews">
+    <h2>Customer Reviews</h2>
+    <div id="reviewsList"></div>
+    <button id="addReviewBtn" class="btn-outline">Add Your Review</button>
+  </section>
+
+  <!-- ✅ Footer -->
+  <div id="footer"></div>
+
+</body>
+</html>

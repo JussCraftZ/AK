@@ -1,0 +1,58 @@
+<nav class="navbar">
+  <div class="nav-container">
+    <!-- Logo -->
+    <a href="index.html" class="logo">
+      <img src="assets/images/logo.png" alt="JussCraftZ Logo" />
+    </a>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <!-- Icons -->
+    <div class="nav-icons">
+
+        <!-- Logout -->
+<button id="logoutBtn" class="icon-btn btn-logout" style="display:none;">
+  <i class="fas fa-sign-out-alt"></i>
+</button>
+
+      <!-- Search -->
+      <button id="searchBtn" class="icon-btn">
+        <i class="fas fa-search"></i>
+      </button>
+
+      <!-- Account -->
+      <a href="account.html" class="icon-btn">
+        <i class="fas fa-user"></i>
+      </a>
+
+      <!-- Cart -->
+      <a href="cart.html" class="icon-btn">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+      </a>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button id="menuToggle" class="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div class="mobile-menu" id="mobileMenu"> <button id="logoutBtnMobile" class="btn-logout" style="display:none;">Logout</button>
+    <a href="index.html">Home</a>
+    <a href="products.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="account.html">My Account</a>
+    <a href="cart.html">Cart</a>
+  </div>
+  <script type="module" src="assets/js/auth.js"></script>
+
+</nav>

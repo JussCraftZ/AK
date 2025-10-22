@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop | JussCraftZ</title>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/loadNavbar.js" defer></script>
+  <script src="assets/js/products.js" defer></script>
+</head>
+
+<body>
+
+  <!-- ✅ Navbar (loaded dynamically) -->
+  <div id="navbar"></div>
+
+  <!-- ✅ Shop Header -->
+  <section class="shop-header">
+    <h1>Shop All Canvases</h1>
+    <p>Find your next masterpiece — hand-drawn and made with meaning.</p>
+  </section>
+
+  <!-- ✅ Filters + Sort -->
+  <section class="filters">
+    <div class="filter-controls">
+      <label for="sort">Sort by:</label>
+      <select id="sort">
+        <option value="featured">Featured</option>
+        <option value="low-high">Price: Low to High</option>
+        <option value="high-low">Price: High to Low</option>
+        <option value="best">Best Choices</option>
+        <option value="sold-out">Sold Out</option>
+      </select>
+    </div>
+
+    <div class="filter-categories">
+      <button class="filter-btn" data-category="All">All</button>
+      <button class="filter-btn" data-category="Aesthetic">Aesthetic</button>
+      <button class="filter-btn" data-category="Seasonal">Seasonal</button>
+      <button class="filter-btn" data-category="Inspirational">Inspirational</button>
+      <button class="filter-btn" data-category="Pair Art">Pair Art</button>
+      <button class="filter-btn" data-category="Beginner">Beginner Friendly</button>
+    </div>
+  </section>
+
+  <!-- ✅ Products Grid -->
+  <section class="product-grid" id="productList">
+    <!-- Products will be injected dynamically via JS -->
+  </section>
+
+  <!-- ✅ Footer (loaded dynamically) -->
+  <div id="footer"></div>
+
+</body>
+</html>

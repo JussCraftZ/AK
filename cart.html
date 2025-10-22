@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Cart | JussCraftZ</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="assets/js/loadNavbar.js" defer></script>
+  <script src="assets/js/loadFooter.js" defer></script>
+  <script src="assets/js/cart.js" type="module" defer></script>
+</head>
+<body>
+
+  <!-- ✅ Navbar -->
+  <div id="navbar"></div>
+
+  <!-- ✅ Cart Section -->
+  <section class="cart-page">
+    <h1>Your Shopping Cart</h1>
+    <div id="cartItemsContainer" class="cart-items"></div>
+
+    <div class="cart-summary">
+      <h3>Order Summary</h3>
+      <p>Subtotal: <span id="cartSubtotal">$0.00</span></p>
+      <p>Shipping: <span id="cartShipping">$0.00</span></p>
+      <h2>Total: <span id="cartTotal">$0.00</span></h2>
+
+      <button id="checkoutBtn" class="btn-primary">Proceed to Checkout</button>
+    </div>
+  </section>
+
+  <!-- ✅ Footer -->
+  <div id="footer"></div>
+
+</body>
+</html>

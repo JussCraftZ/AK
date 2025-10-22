@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | JussCraftZ</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="/src/login.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a href="index.html" class="logo">JussCraftZ</a>
+  </header>
+
+  <main class="auth-container">
+    <h2>Welcome Back</h2>
+
+<form id="loginForm" onsubmit="loginUser(event)">
+  <label>Email</label>
+  <input type="email" id="loginEmail" required placeholder="Enter your email" />
+
+  <label>Password</label>
+  <input type="password" id="loginPassword" required placeholder="Enter your password" />
+
+  <button type="submit">Login</button>
+</form>
+
+
+    <p>Don’t have an account? <a href="register.html">Create one here</a></p>
+  </main>
+  <script type="module" src="assets/js/auth.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Product Management | JussCraftZ</title>
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script type="module" src="assets/js/admin-products.js" defer></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <div id="navbar-container"></div>
+
+  <main class="admin-page">
+    <h1>🛠 Product Management</h1>
+    <p>Add, edit, or remove products from your store.</p>
+
+    <!-- ✅ Add Product Form -->
+    <section class="add-product-section">
+      <h2>Add New Product</h2>
+      <form id="addProductForm">
+        <input type="text" id="name" placeholder="Product Name" required />
+        <textarea id="description" placeholder="Product Description"></textarea>
+        <input type="number" id="price" placeholder="Price (USD)" required />
+        <input type="text" id="category" placeholder="Category" required />
+        <input type="url" id="image" placeholder="Image URL" required />
+        <input type="number" id="stock" placeholder="Stock Quantity" required />
+
+        <button type="submit" class="btn-primary">Add Product</button>
+      </form>
+    </section>
+
+    <!-- ✅ Product List -->
+    <section class="product-list-section">
+      <h2>Existing Products</h2>
+      <div id="productsContainer">Loading products...</div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <script src="assets/js/loadNavbar.js" defer></script>
+  <script src="assets/js/loadFooter.js" defer></script>
+</body>
+</html>
